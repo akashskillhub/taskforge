@@ -19,7 +19,6 @@ import { format } from "date-fns"
 
 export default function EmployeeDashboard() {
 
-    if (typeof window === undefined) return
 
     const [show, setShow] = useState(false)
     const [selectedEmployee, setSelectedEmployee] = useState<Employee | null>(null)
@@ -49,7 +48,7 @@ export default function EmployeeDashboard() {
         name: z.string().min(3),
         mobile: z.string().min(3),
         email: z.string().email(),
-        profile: z.instanceof(FileList).optional(),
+        profile: z.any(),
         department: z.string().min(3),
         jobRole: z.string().min(3),
         doj: z.coerce.date(),
