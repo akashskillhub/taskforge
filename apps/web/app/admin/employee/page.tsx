@@ -19,7 +19,7 @@ import { format } from "date-fns"
 
 export default function EmployeeDashboard() {
 
-    if (window === undefined) return
+    if (typeof window === undefined) return
 
     const [show, setShow] = useState(false)
     const [selectedEmployee, setSelectedEmployee] = useState<Employee | null>(null)
